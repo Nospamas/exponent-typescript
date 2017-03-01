@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from "react";
 import {
   Image,
   Linking,
@@ -8,11 +8,15 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native';
+  ViewStyle,
+  TextStyle
+} from "react-native";
 
-import { MonoText } from '../components/StyledText';
+declare const __DEV__: boolean;
 
-export default class HomeScreen extends React.Component {
+import { MonoText } from "../components/StyledText";
+
+export default class HomeScreen extends React.Component<{}, {}> {
   static route = {
     navigationBar: {
       visible: false,
@@ -29,7 +33,7 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/exponent-wordmark.png')}
+              source={require("../assets/images/exponent-wordmark.png")}
               style={styles.welcomeImage}
             />
           </View>
@@ -101,96 +105,96 @@ export default class HomeScreen extends React.Component {
   }
 
   _handleLearnMorePress = () => {
-    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/development-mode');
+    Linking.openURL("https://docs.getexponent.com/versions/latest/guides/development-mode");
   }
 
   _handleHelpPress = () => {
-    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/up-and-running.html#can-t-see-your-changes');
+    Linking.openURL("https://docs.getexponent.com/versions/latest/guides/up-and-running.html#can-t-see-your-changes");
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: "#fff",
+  } as ViewStyle,
   developmentModeText: {
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
+    color: "rgba(0,0,0,0.4)",
     fontSize: 15,
-    textAlign: 'center',
-  },
+    textAlign: "center",
+  } as ViewStyle,
   contentContainer: {
     paddingTop: 80,
-  },
+  } as ViewStyle,
   welcomeContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 10,
     marginBottom: 20,
-  },
+  } as ViewStyle,
   welcomeImage: {
     width: 200,
     height: 34.5,
     marginTop: 3,
   },
   getStartedContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 50,
-  },
+  } as ViewStyle,
   homeScreenFilename: {
     marginVertical: 7,
   },
   codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+    color: "rgba(96,100,109, 0.8)",
   },
   codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: "rgba(0,0,0,0.05)",
     borderRadius: 3,
     paddingHorizontal: 4,
-  },
+  } as ViewStyle,
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: "rgba(96,100,109, 1)",
     lineHeight: 23,
-    textAlign: 'center',
-  },
+    textAlign: "center",
+  } as TextStyle,
   tabBarInfoContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
+        shadowColor: "black",
         shadowOffset: {height: -3},
         shadowOpacity: 0.1,
         shadowRadius: 3,
-      },
+      } as ViewStyle,
       android: {
         elevation: 20,
-      },
+      } as ViewStyle,
     }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
+    alignItems: "center",
+    backgroundColor: "#fbfbfb",
     paddingVertical: 20,
-  },
+  } as ViewStyle,
   tabBarInfoText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
+    color: "rgba(96,100,109, 1)",
+    textAlign: "center",
+  } as TextStyle,
   navigationFilename: {
     marginTop: 5,
   },
   helpContainer: {
     marginTop: 15,
-    alignItems: 'center',
-  },
+    alignItems: "center",
+  } as ViewStyle,
   helpLink: {
     paddingVertical: 15,
   },
   helpLinkText: {
     fontSize: 14,
-    color: '#2e78b7',
+    color: "#2e78b7",
   },
 });

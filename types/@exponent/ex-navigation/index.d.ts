@@ -2,10 +2,30 @@
 // Project: https://github.com/koajs/response-time
 // Definitions by: John Sampson <http://github.com/nospamas>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+import * as React from 'react';
 
-// declare const ExNavigation: any;
 declare namespace ExNavigation {
-    export const NavigationProvider: any
-    export const StackNavigation: any
+
+    interface IRoutes {
+
+    }
+
+    interface IRoute {
+
+    }
+
+    type IRouterCreationOptions = () => IRoutes
+
+    interface IRouter<P, S> extends React.Component<P, S> {
+        getRoute(route: string): IRoute
+    }
+
+    export function createRouter<P, S>(routeOptions: IRouterCreationOptions): IRouter<P, S>
+
+    export const NavigationProvider: any;
+    export const StackNavigation: any;
+
+    export const TabNavigation: any;
+    export const TabNavigationItem: any;
 }
 export = ExNavigation;

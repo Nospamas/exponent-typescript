@@ -22,7 +22,6 @@
     ]
   },
   "include": [
-    "types",
     "app/**/*.js",
     "app/**/*.ts",
     "app/**/*.tsx"
