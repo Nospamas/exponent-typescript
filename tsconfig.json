@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2015",
     "noImplicitAny": false,
     "removeComments": true,
     "allowJs": true,
-    "outDir": "build/",
-    "target": "es6",
+    "outDir": "./build",
+    "target": "es2015",
     "typeRoots": ["./node_modules/@types/", "./types/"],
     "sourceMap": true
   },
   "include": [
-    "app/main.js"
+    "app/**/*.js",
+    "app/**/*.ts",
+    "app/**/*.tsx"
   ],
   "exclude": [
     "node_modules"
