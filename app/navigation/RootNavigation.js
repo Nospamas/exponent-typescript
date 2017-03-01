@@ -17,7 +17,7 @@ import {
 
 import Alerts from '../constants/Alerts';
 import Colors from '../constants/Colors';
-import registerForPushNotificationsAsync from '../app/api/registerForPushNotificationsAsync';
+import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {

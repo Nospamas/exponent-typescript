@@ -10,25 +10,26 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../app/components/StyledText';
+import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
       visible: false,
     },
-  }
+  };
 
   render() {
     return (
       <View style={styles.container}>
+        <View />
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('./images/exponent-wordmark.png')}
+              source={require('../assets/images/exponent-wordmark.png')}
               style={styles.welcomeImage}
             />
           </View>
