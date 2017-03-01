@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
+import { MonoText } from '../app/components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static route = {
@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/exponent-wordmark.png')}
+              source={require('./images/exponent-wordmark.png')}
               style={styles.welcomeImage}
             />
           </View>
