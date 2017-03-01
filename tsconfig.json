@@ -1,15 +1,28 @@
 {
   "compilerOptions": {
     "module": "es2015",
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "removeComments": true,
     "allowJs": true,
     "outDir": "./build",
     "target": "es2015",
-    "typeRoots": ["./node_modules/@types/", "./types/"],
-    "sourceMap": true
+    "baseUrl": "types",
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
+    "sourceMap": true,
+    "jsx": "react",
+    "lib": [
+      "es2015",
+      "DOM",
+      "ES6",
+      "ScriptHost"
+    ]
   },
   "include": [
+    "types",
     "app/**/*.js",
     "app/**/*.ts",
     "app/**/*.tsx"

@@ -1,7 +1,6 @@
-import Exponent from 'exponent';
-import React from 'react';
+import * as Exponent from 'exponent';
+import * as React from 'react';
 import {
-  AppRegistry,
   Platform,
   StatusBar,
   StyleSheet,
@@ -18,10 +17,10 @@ import {
 import Router from './navigation/Router';
 import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 
-class AppContainer extends React.Component {
+class AppContainer extends React.Component<{}, {}> {
   state = {
     appIsReady: false,
-  }
+  };
 
   componentWillMount() {
     this._loadAssetsAsync();
@@ -56,7 +55,6 @@ class AppContainer extends React.Component {
           <NavigationProvider router={Router}>
             <StackNavigation id="root" initialRoute={Router.getRoute('rootNavigation')} />
           </NavigationProvider>
-
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
         </View>
